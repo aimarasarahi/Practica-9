@@ -1,0 +1,148 @@
+#include <stdio.h>
+int main()
+{//esta llave indica que la funcion principal inicia aqui
+
+int m1[100][100];// declaracion de matriz 1
+int m2[100][100];//declaracion de matriz 2
+int r1;// r1 es el numero ingresado de renglones que tendra la matriz
+int r2;// es el numero ingresado de renglones que tendra la matriz 2
+int c1;//c2 es el numero ingresado de columnas que tendra la matriz
+int c2; // es el numero ingresado de columnas que tendra la matriz2
+int r; // r es el numero que el usuario va a ingresar en renglones
+int c; // c es el numero que el usuario va a ingresar en columnas
+printf("escribe el numero de renglones r1 y columnas c1\n");// esto es un mensaje que se envia al usuario, como las instrucciones para que llene el numero de renglones y columnas que quiere que tenga la matriz
+scanf("%d",&r1);// lee el numero de reglones que quiere el usuario que tenga la matriz
+scanf("%d",&c1);//lee el numero de reglones que quiere el usuario que tenga la matriz
+int c_r;//declaracion de variable para contar renglones
+int c_c;//declaracion de variable para contar columnas
+c_r=0;//asignacion de variable para contador de renglones
+c_c=0;//asignacion de variable para contador de columnas
+while (c_r<r1)//condicion que se ejecutara cuando el contador de renglones sea menor que el numero de renglones que el usuario ingreso
+{//esta llave indica que la condicion inicia aqui
+	c_c=0;// esto se hace para que cada que se repita 
+	while(c_c<c1)//condicion que se ejecutara cuando el contador de columnas sea menor que el numero de columnas que el usuario ingreso
+	{//esta llave indica que la condicion inicia aqui
+	
+		printf("Introduce Matriz1 [%d][%d]",c_r,c_c); //instruccion que aparecera en la pantalla para que el usuario la lleve a cabo
+		scanf("%d",&m1[c_r][c_c]);//indica que se lee el numero 
+		c_c=c_c+1;//indica que el contador de columnas se va a incrementar en una unidad
+	}//esta llave indica que la condicion termina aqui
+	
+	c_r=c_r+1;//indica que el contador de renglones se va a incrementar en una unidad
+	
+	
+}//esta llave indica que la condicion termina aqui 
+c_r=0;// asignacion de valor
+c_c=0;//asignacion de valor
+while(c_r<r1)//condicion ccuando coontador de renglones menor que renglones ingresados
+{
+	while(c_c<c1)//condicion ccuando coontador de columnas menor que columnas ingresadas
+	{
+		printf("%d", m1[c_r][c_c]);//impresion de lo que se ingreso
+		c_c=c_c+1; //contador se incrementa en uno
+	}
+	c_r=c_r+1;//contador se incrementa en uno
+	c_c=0;// asignacion de valor
+	printf("\n");// impresion de un espacio para que no salga todo corrido y se divida por renglones
+}
+int c_r2;//declaracion de contador de renglones para matriz 2
+int c_c2;//declaracion de contador de columnas para matriz 2
+printf("escribe el numero de renglones r2 y columnas c2\n");// esto es un mensaje que se envia al usuario, como las instrucciones para que llene el numero de renglones y columnas que quiere que tenga la matriz
+scanf("%d",&r2);// lee el numero de reglones que quiere el usuario que tenga la matriz
+scanf("%d",&c2);//lee el numero de reglones que quiere el usuario que tenga la matriz
+
+c_r2=0;//asignacion de variable para contador de renglones
+c_c2=0;//asignacion de variable para contador de columnas
+while (c_r2<r2)//condicion que se ejecutara cuando el contador de renglones sea menor que el numero de renglones que el usuario ingreso
+{//esta llave indica que la condicion inicia aqui
+	c_c2=0;// asignacion de valor
+	while(c_c2<c2)//condicion que se ejecutara cuando el contador de columnas sea menor que el numero de columnas que el usuario ingreso
+	{//esta llave indica que la condicion inicia aqui
+	
+		printf("Introduce Matriz2 [%d][%d]",c_r2,c_c2); //instruccion que aparecera en la pantalla para que el usuario la lleve a cabo
+		scanf("%d",&m2[c_r2][c_c2]);//indica que se lee el numero 
+		c_c2=c_c2+1;//indica que el contador de columnas se va a incrementar en una unidad
+	}//esta llave indica que la condicion termina aqui
+	
+	c_r2=c_r2+1;//indica que el contador de renglones se va a incrementar en una unidad
+	
+	
+}//esta llave indica que la condicion termina aqui 
+c_r2=0;// asignacion de valor
+c_c2=0;// asignacion de valor
+while(c_r2<r2)//condicion ccuando coontador de renglones menor que renglones ingresados
+{
+	while(c_c2<c2)//condicion ccuando coontador de columnas menor que renglones ingresados
+	{
+		printf("%d", m2[c_r2][c_c2]);//impresion de lo que se ingreso
+		c_c2=c_c2+1;//contador se incrementa en uno
+	}
+	c_r2=c_r2+1;//contador se incrementa en uno
+	c_c2=0;// asignacion de valor
+	printf("\n");
+}
+printf("el resultado de la multiplicacion de matrices es:");
+int m3[100][100];
+int c_r3;
+int c_c3;
+c_c=0;// asignacion de valor
+c_c2=0;// asignacion de valor
+c_c3=0;// asignacion de valor
+c_r=0;// asignacion de valor
+c_r2=0;// asignacion de valor
+c_r3=0;// asignacion de valor
+
+int resultado;
+while (c_r!=c1)
+{
+	while(c_r<r1)
+	{
+		c_r=0;// asignacion de valor
+		c_r=c_r+1;// contador se incrementa en uno
+		while(c_c2<c2)//condicion: cuando contador de columnas 2 menor que numero de columnas ingresado para matriz 2
+		{
+			m1[c_r][c_c]*m2[c_r2][c_c2];//multiplicacion del primer elemento de la primera columna con el de la seguda
+			c_c=c_c+1;// contador se incrementa en uno
+			c_r2=c_r2+1;// contador se incrementa en uno
+			resultado=m1[c_r][c_c]*m2[c_r2][c_c2]+m3[c_r3][c_c3];//multiplicacion del primer elemento de la primera columna con el de la seguda mas el primer valor ingresado a matriz3
+			printf("%d", m3[c_r3][c_c3]);
+			c_r=c_r+1;// contador se incrementa en uno
+			while(c_r2!=r2)//cuando contador de renglones de la matriz uno dea diferente de numero de renglones ingresado de la matriz dos
+			{
+				c_r=0;// asignacion de valor
+				c_c2=c_c2+1;// contador se incrementa en uno
+				c_c3=c_c3+1;// contador se incrementa en uno
+			}
+				while(c_c2!=c2)//cuando contador de columas de la matriz uno dea diferente de numero de columnas ingresado de la matriz dos
+					{
+						c_r=c_r+1;// contador se incrementa en uno
+						c_c2=0;// asignacion de valor
+					
+					}
+		
+			
+		}
+		//c_r=c_r+1;
+		printf("%d", m3[c_r3][c_c3]);
+	}
+}
+c_r3=0;
+c_c3=0;
+int r3;
+r3=r1;
+int c3;
+c3=c2;
+//while(c_r3<r3)
+//{
+	//while(c_c3<c3)
+	//{
+	//	printf("%d", m3[c_r3][c_c3]);
+	//	c_c3=c_c3+1;
+	//}
+	//c_r3=c_r3+1;
+	//c_c3=0;
+	//printf("\n");
+
+	return 0;
+//}
+}//esta llave indica que la funcion principal termina aqui
